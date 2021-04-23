@@ -46,8 +46,9 @@ function summation(number) {
 
   // return (number / 2) * (number + 1); // math
   }
-console.log(summation(4));
-console.log(summation(5));
+
+// console.log(summation(4));
+// console.log(summation(5));
 
 // 🦁🦁🦁 Topic 2: ADVANCED Array Methods 🦁🦁🦁
 // Given this zoo data from around the United States, follow the instructions below. Use the specific array methods in the requests below to solve the problems.
@@ -71,9 +72,15 @@ const zooAnimals = [
   displayNames will be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
 
-  function animalNames(/*Your Code Here*/){
-    /*Your Code Here*/
+  function animalNames(array){
+    const displayNames = [];
+    array.forEach(function (animal){
+      displayNames.push(`name: ${animal.animal_name}, scientific: ${animal.scientific_name}`);
+    });
+    return displayNames;
   }
+
+console.log(animalNames(zooAnimals));
   
 
   /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁

@@ -17,7 +17,7 @@ myFunction();
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
 
-// scopes pass down. Just as myFunction has access to external, nestedFunction
+// Scopes pass down. Just as myFunction has access to external, nestedFunction
 // has access to internal. This does mean that an internal variable may be held
 // in memory after a function completes, but I don't actually know the specifics
 // of whether it gets moved to a header of the nested function or if it is kept

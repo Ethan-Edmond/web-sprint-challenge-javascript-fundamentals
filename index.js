@@ -275,49 +275,49 @@ console.log(cuboidTwo.surfaceArea()); // 130
 
 // 🦄 💪 Stretch Task: Extend the base class CuboidMaker with a sub class called CubeMaker.  Find out the formulas for volume and surface area for cubes and create those methods using the dimension properties from CuboidMaker.  Test your work by logging out your volume and surface area. 🦄 💪
 
-// extending with the old way
+// // extending with the old way
 
-function CubeMaker(side){ // initializing from args cause there's only one
-  CuboidMaker.call(this, {
-    length: side,
-    width: side,
-    height: side
-  });
-}
-CubeMaker.prototype = Object.create(CuboidMaker.prototype);
-// all of the methods still apply to cubes, but I can remake them to look cleaner
-CubeMaker.prototype.volume = function(){
-  return this.length ** 3;
-};
-CubeMaker.prototype.surfaceArea = function(){
-  return (this.length ** 2) * 6;
-};
-
-// it works... but the console log tells me that myCube is a CuboidMaker type object
-// which is annoying and I don't know how to fix it.
-
-// extending the new way
-
-// class CubeMaker extends CuboidMakerTwo{
-//   constructor(side){
-//     super({
-//       length: side,
-//       height: side,
-//       width: side
-//     });
-//   }
-//   volume(){
-//     return this.length ** 3;
-//   }
-//   surfaceArea(){
-//     return (this.length ** 2) * 6;
-//   }
+// function CubeMaker(side){ // initializing from args cause there's only one
+//   CuboidMaker.call(this, {
+//     length: side,
+//     width: side,
+//     height: side
+//   });
 // }
+// CubeMaker.prototype = Object.create(CuboidMaker.prototype);
+// // all of the methods still apply to cubes, but I can remake them to look cleaner
+// CubeMaker.prototype.volume = function(){
+//   return this.length ** 3;
+// };
+// CubeMaker.prototype.surfaceArea = function(){
+//   return (this.length ** 2) * 6;
+// };
 
-const myCube = new CubeMaker(5);
-console.log(myCube);
-console.log(myCube.volume());
-console.log(myCube.surfaceArea());
+// // it works... but the console log tells me that myCube is a CuboidMaker type object
+// // which is annoying and I don't know how to fix it.
+
+// // extending the new way
+
+// // class CubeMaker extends CuboidMakerTwo{
+// //   constructor(side){
+// //     super({
+// //       length: side,
+// //       height: side,
+// //       width: side
+// //     });
+// //   }
+// //   volume(){
+// //     return this.length ** 3;
+// //   }
+// //   surfaceArea(){
+// //     return (this.length ** 2) * 6;
+// //   }
+// // }
+
+// const myCube = new CubeMaker(5);
+// console.log(myCube);
+// console.log(myCube.volume());
+// console.log(myCube.surfaceArea());
 
   /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
   function foo(){

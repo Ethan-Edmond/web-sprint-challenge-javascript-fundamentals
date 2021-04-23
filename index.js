@@ -277,38 +277,36 @@ console.log(cuboidTwo.surfaceArea()); // 130
 
 // extending with the old way
 
-// function CubeMaker(argObj){ // initializing from args cause there's only one
-//   CuboidMaker(argObj);
-// }
-// CubeMaker.prototype = Object.create(CuboidMaker.prototype);
+function CubeMaker(side){ // initializing from args cause there's only one
+  CuboidMaker.call(this, {
+    length: side,
+    width: side,
+    height: side
+  });
+}
+CubeMaker.prototype = Object.create(CuboidMaker.prototype);
 
-// const myCube = new CubeMaker({
-//   length: 5,
-//   height: 5,
-//   width: 5
-// });
-// console.log(myCube);
-// console.log(myCube.volume());
-// console.log(myCube.surfaceArea());
+// it works... but the console log tells me that myCube is a CuboidMaker type object
+// which is annoying and I don't know how to fix it.
 
 // extending the new way
 
-class CubeMaker extends CuboidMakerTwo{
-  constructor(side){
-    super({
-      length: side,
-      height: side,
-      width: side
-    });
-  }
-  // all of the methods still apply to cubes, but I can remake them to look cleaner
-  volume(){
-    return this.length ** 3;
-  }
-  surfaceArea(){
-    return (this.length ** 2) * 6;
-  }
-}
+// class CubeMaker extends CuboidMakerTwo{
+//   constructor(side){
+//     super({
+//       length: side,
+//       height: side,
+//       width: side
+//     });
+//   }
+//   // all of the methods still apply to cubes, but I can remake them to look cleaner
+//   volume(){
+//     return this.length ** 3;
+//   }
+//   surfaceArea(){
+//     return (this.length ** 2) * 6;
+//   }
+// }
 
 const myCube = new CubeMaker(5);
 console.log(myCube);

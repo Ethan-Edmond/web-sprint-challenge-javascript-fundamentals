@@ -285,6 +285,7 @@ function CubeMaker(side){ // initializing from args cause there's only one
   });
 }
 CubeMaker.prototype = Object.create(CuboidMaker.prototype);
+// all of the methods still apply to cubes, but I can remake them to look cleaner
 CubeMaker.prototype.volume = function(){
   return this.length ** 3;
 };
@@ -305,7 +306,6 @@ CubeMaker.prototype.surfaceArea = function(){
 //       width: side
 //     });
 //   }
-//   // all of the methods still apply to cubes, but I can remake them to look cleaner
 //   volume(){
 //     return this.length ** 3;
 //   }

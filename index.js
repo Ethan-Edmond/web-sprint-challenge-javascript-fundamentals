@@ -17,9 +17,12 @@ myFunction();
 
 //🚀🚀🚀 ⬇️ 📝 Explanation ⬇️ 📝 🚀🚀🚀: 
 
-
-
-
+// scopes pass down. Just as myFunction has access to external, nestedFunction
+// has access to internal. This does mean that an internal variable may be held
+// in memory after a function completes, but I don't actually know the specifics
+// of whether it gets moved to a header of the nested function or if it is kept
+// in the same place in memory and the nested function is linked to it or
+// something else entirely.
 
 /* 🚀🚀🚀 Task 2: Counter 🚀🚀🚀 */
 /* Use summation to do the following:

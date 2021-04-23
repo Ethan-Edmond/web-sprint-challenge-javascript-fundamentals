@@ -285,6 +285,12 @@ function CubeMaker(side){ // initializing from args cause there's only one
   });
 }
 CubeMaker.prototype = Object.create(CuboidMaker.prototype);
+CubeMaker.prototype.volume = function(){
+  return this.length ** 3;
+};
+CubeMaker.prototype.surfaceArea = function(){
+  return (this.length ** 2) * 6;
+};
 
 // it works... but the console log tells me that myCube is a CuboidMaker type object
 // which is annoying and I don't know how to fix it.

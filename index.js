@@ -165,9 +165,31 @@ function greeting(firstName, lastName){
 
 // 🦁💪 Stretch: If you haven't already, convert your array method callbacks into arrow functions - make sure you comment out this section before you submit your work 🦁💪
  
+// const animalNames = (array) => {
+//   const displayNames = [];
+//   array.forEach(animal => {
+//     displayNames.push(`name: ${animal.animal_name}, scientific: ${animal.scientific_name}`);
+//   });
+//   return displayNames;
+// };
 
+// const lowerCaseNames = (array) => {
+//   return array.map(animal => {
+//     return animal.animal_name.toLowerCase();
+//   });
+// };
 
+// const lowPopulationAnimals = (array) => {
+//   return array.filter(animal => {
+//     return animal.population < 5;
+//   });
+// };
 
+// const USApop = (array) => {
+//   return array.reduce((acc,animal) => {
+//     return acc + animal.population;
+//   }, 0);
+// };
 
 // 🐴🐴🐴 Topic 3: Prototypes 🐴🐴🐴 //
 //🐴🐴🐴 Task: You are to build a cuboid maker that can return values for a cuboid's volume or surface area. Cuboids are similar to cubes but do not have even sides. Follow the steps in order to accomplish this challenge. 🐴🐴🐴
@@ -253,11 +275,45 @@ console.log(cuboidTwo.surfaceArea()); // 130
 
 // 🦄 💪 Stretch Task: Extend the base class CuboidMaker with a sub class called CubeMaker.  Find out the formulas for volume and surface area for cubes and create those methods using the dimension properties from CuboidMaker.  Test your work by logging out your volume and surface area. 🦄 💪
 
+// extending with the old way
 
+// function CubeMaker(argObj){ // initializing from args cause there's only one
+//   CuboidMaker(argObj);
+// }
+// CubeMaker.prototype = Object.create(CuboidMaker.prototype);
 
+// const myCube = new CubeMaker({
+//   length: 5,
+//   height: 5,
+//   width: 5
+// });
+// console.log(myCube);
+// console.log(myCube.volume());
+// console.log(myCube.surfaceArea());
 
+// extending the new way
 
+class CubeMaker extends CuboidMakerTwo{
+  constructor(side){
+    super({
+      length: side,
+      height: side,
+      width: side
+    });
+  }
+  // all of the methods still apply to cubes, but I can remake them to look cleaner
+  volume(){
+    return this.length ** 3;
+  }
+  surfaceArea(){
+    return (this.length ** 2) * 6;
+  }
+}
 
+const myCube = new CubeMaker(5);
+console.log(myCube);
+console.log(myCube.volume());
+console.log(myCube.surfaceArea());
 
   /* 🛑🛑🛑🛑🛑 Please do not modify anything below this line 🛑🛑🛑🛑🛑 */
   function foo(){

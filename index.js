@@ -32,7 +32,19 @@ myFunction();
 For example, `summation(4)` should return 10 because 1+2+3+4 is 10. Note, you may use a for loop for this function if you wish */
 
 function summation(number) {
-  return (number / 2) * (number + 1); // math
+  let counter = 0;
+  const averageSize = (number + 1) / 2;
+  function addRecursively(num){ // I wanted some closure
+    if (num === 0){
+      return counter;
+    } else {
+      counter += averageSize;
+      return addRecursively(num - 1);
+    }
+  }
+  return addRecursively(number);
+
+  // return (number / 2) * (number + 1); // math
   }
 console.log(summation(4));
 console.log(summation(5));
